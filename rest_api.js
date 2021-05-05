@@ -5,11 +5,12 @@ var api_routes = require('./api_routes_dev.js');
 app.use('/api', api_routes);
 
 // static file route
-app.use('/demo', express.static('front_end'));
+app.use('/', express.static('front_end'));
 
 
 // Start server
-app.listen(3000, function() {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function() {
     
     console.log("Server is running")
     
